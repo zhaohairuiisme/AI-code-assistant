@@ -12,6 +12,11 @@
   <!-- 引入Google字体 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- 引入代码高亮库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
   <!-- Tailwind配置 -->
   <script>
     tailwind.config = {
@@ -72,6 +77,7 @@
         <a href="#troubleshooting" class="font-medium hover:text-primary transition-colors">问题解决</a>
         <a href="#advantages" class="font-medium hover:text-primary transition-colors">优点</a>
         <a href="#mirror" class="font-medium hover:text-primary transition-colors">镜像源配置</a>
+        <a href="#core-code" class="font-medium hover:text-primary transition-colors">核心源代码</a>
       </nav>
       
       <!-- 移动端菜单按钮 -->
@@ -89,6 +95,7 @@
         <a href="#troubleshooting" class="font-medium py-2 hover:text-primary transition-colors">问题解决</a>
         <a href="#advantages" class="font-medium py-2 hover:text-primary transition-colors">优点</a>
         <a href="#mirror" class="font-medium py-2 hover:text-primary transition-colors">镜像源配置</a>
+        <a href="#core-code" class="font-medium py-2 hover:text-primary transition-colors">核心源代码</a>
       </div>
     </div>
   </header>
@@ -102,11 +109,14 @@
             探索 <span class="bg-gradient-to-r from-primary to-secondary text-gradient">AI代码助手</span> 的魅力
           </h1>
           <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
-            本页面将详细介绍 AI 代码助手（1.py）的使用方法、所需库安装、问题解决、优点以及 pip 包管理器的镜像源配置。
+            本页面将详细介绍 AI 代码助手的使用方法、所需库安装、问题解决、优点以及 pip 包管理器的镜像源配置。
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#usage" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg shadow-primary/20 transition-all">
               开始了解
+            </a>
+            <a href="https://github.com/zhaohairuiisme/AI-code-assistant" target="_blank" class="px-6 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-lg shadow-lg shadow-secondary/20 transition-all">
+              访问 GitHub 仓库
             </a>
           </div>
         </div>
@@ -300,7 +310,30 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
       </div>
     </div>
   </section>
-  
+
+  <!-- 核心源代码 -->
+  <section id="core-code" class="py-20 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">核心源代码</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">以下是 AI 代码助手的核心源代码：</p>
+      </div>
+      <pre><code class="language-python" id="core-code-content"></code></pre>
+      <script>
+        fetch('https://raw.githubusercontent.com/zhaohairuiisme/AI-code-assistant/refs/heads/main/index.py')
+          .then(response => response.text())
+          .then(data => {
+            const codeElement = document.getElementById('core-code-content');
+            codeElement.textContent = data;
+            hljs.highlightElement(codeElement);
+          });
+      </script>
+    </div>
+    <div class = "text-center">
+    
+      <h5>您可以前往<a href = "https://raw.githubusercontent.com/zhaohairuiisme/AI-code-assistant/refs/heads/main/index.py" style = "color:blue">https://raw.githubusercontent.com/zhaohairuiisme/AI-code-assistant/refs/heads/main/index.py</a>查看最新代码（此代码版本：1.1）</h5>
+  </div>
+  </section>
   
   <!-- 页脚 -->
   <footer class="bg-dark text-white py-12">
@@ -339,6 +372,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
             <li><a href="#troubleshooting" class="text-gray-400 hover:text-white transition-colors">问题解决</a></li>
             <li><a href="#advantages" class="text-gray-400 hover:text-white transition-colors">优点</a></li>
             <li><a href="#mirror" class="text-gray-400 hover:text-white transition-colors">镜像源配置</a></li>
+            <li><a href="#core-code" class="text-gray-400 hover:text-white transition-colors">核心源代码</a></li>
           </ul>
         </div>
         
@@ -356,14 +390,15 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
           <ul class="space-y-3">
             <li class="flex items-center space-x-3">
               <i class="fa fa-envelope text-primary"></i>
-              <a href="mailto:13537681834@163.com" class="text-gray-400 hover:text-white transition-colors">contact@example.com</a>
+                <ul>
+                  <li><a href="mailto:13537681834@163.com" class="text-gray-400 hover:text-white transition-colors">13537681834@163.com</a></li>
+                  <li><a class="text-gray-400 hover:text-white transition-colors">zhaohairuiisme2025@outlook.com(已弃用)</a></li>
+                  <li><a href="mailto:zhaohairuiisme@hotmail.com" class="text-gray-400 hover:text-white transition-colors">zhaohairuiisme@hotmail.com</a></li>
+                </ul>
             </li>
-           
           </ul>
         </div>
       </div>
-      
-     
     </div>
   </footer>
 
